@@ -18,6 +18,8 @@ Este es un sistema de veterinaria desarrollado en C# que permite a los usuarios 
 
 ```bash
 git clone https://github.com/tu-usuario/veterinaria.git
+```
+
 
 1-Abre el proyecto en tu IDE de preferencia (por ejemplo, Visual Studio).
 
