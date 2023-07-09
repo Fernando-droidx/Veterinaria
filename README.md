@@ -17,7 +17,7 @@ Este es un sistema de veterinaria desarrollado en C# que permite a los usuarios 
 1. Clona el repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/veterinaria.git
+git clone https://github.com/Fernando-droidx/veterinaria.git
 ```
 
 1-Abre el proyecto en tu IDE de preferencia (por ejemplo, Visual Studio).
