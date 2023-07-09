@@ -20,7 +20,19 @@ Este es un sistema de veterinaria desarrollado en C# que permite a los usuarios 
 git clone https://github.com/tu-usuario/veterinaria.git
 ```
 
-
 1-Abre el proyecto en tu IDE de preferencia (por ejemplo, Visual Studio).
 
 2-Compila el proyecto para asegurarte de que no haya errores de compilación.
+
+## Uso
+1-Ejecuta la aplicación desde tu IDE o compila el proyecto en un ejecutable.
+
+2-La aplicación mostrará un formulario de agendamiento de citas.
+
+3-Completa el formulario con el nombre del propietario y la información de la mascota.
+
+4-Haz clic en el botón "Guardar" para agendar la cita.
+
+5-Se generará un ticket de cita con un número único para su referencia.
+
+6-Los datos de la cita se almacenarán en una base de datos o archivo para su posterior acceso.
