@@ -1,4 +1,4 @@
-#🐶 Sistema de Veterinaria 🐺
+# 🐶 Sistema de Veterinaria 🐺
 
 Este es un sistema de veterinaria desarrollado en C# que permite a los usuarios agendar citas para sus mascotas. Al completar un formulario con el nombre del propietario y la información de la mascota, se genera un ticket de cita para su referencia.
 
