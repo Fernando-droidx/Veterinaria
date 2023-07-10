@@ -48,18 +48,26 @@ namespace Veterinaria
             else if (comboBox1.Text == "Perros")
             {
                 MessageBox.Show("Cita guardada en un txt son 100 mxn");
+                precio = 100;
+
             }
             else if (comboBox1.Text == "Animales de granja")
             {
                 MessageBox.Show("Cita guardada en un txt son 300 mxn");
+                precio = 300;
+
             }
             else if (comboBox1.Text == "Gatos")
             {
                 MessageBox.Show("Cita guardada en un txt son 100 mxn");
+                precio = 100;
+
             }
             else if (comboBox1.Text == "Roedores")
             {
                 MessageBox.Show("Cita guardada en un txt son 200 mxn");
+                precio = 200;
+
             }
 
             GenerarId();
