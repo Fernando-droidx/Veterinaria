@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Veterinaria
 {
     public partial class MenuMascota : Form
     {
+        static int precio = 0;
         public MenuMascota()
         {
             InitializeComponent();
@@ -37,9 +39,11 @@ namespace Veterinaria
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
+            
             if (comboBox1.Text == "Aves")
             {
                 MessageBox.Show("Cita guardada en un txt son 150 mxn");
+                precio = 150;
             }
             else if (comboBox1.Text == "Perros")
             {
@@ -57,20 +61,46 @@ namespace Veterinaria
             {
                 MessageBox.Show("Cita guardada en un txt son 200 mxn");
             }
-            
-            string texto = TXTProblemas.Text; // Suponiendo que textBox1 es el nombre del campo de texto
-            string rutaArchivo = "C:\\Users\\NORMA\\Desktop\\Fernando\\C#\\Entrevistas\\Problemas\\Veterinaria\\Veterinaria\\Cita.txt"; // Ruta y nombre del archivo de texto
+
+            GenerarId();
+
+        }
+        public void GenerarId()
+        {
+            string rutaArchivoID = "C:\\Users\\NORMA\\Desktop\\Fernando\\C#\\Entrevistas\\Problemas\\Veterinaria\\Veterinaria\\ID.txt";
+
+
+            int id = 0;
+            if (File.Exists(rutaArchivoID))
+            {
+                string[] lines = File.ReadAllLines(rutaArchivoID);
+                if (lines.Length > 0)
+                {
+                    if (int.TryParse(lines[lines.Length - 1], out int lastId))
+                    {
+                        id = lastId;
+                    }
+                }
+            }
+
+            id++; // Incrementar el ID
+
+            string texto = TXTProblemas.Text;
+            string rutaArchivo = "C:\\Users\\NORMA\\Desktop\\Fernando\\C#\\Entrevistas\\Problemas\\Veterinaria\\Veterinaria\\Cita.txt";
 
             using (StreamWriter writer = new StreamWriter(rutaArchivo, true))
             {
+                writer.WriteLine($"El id es: {id}");
                 writer.WriteLine($"El problema(s): {texto}");
-
+                writer.WriteLine($"Y precio de: {precio}");
+                writer.WriteLine($"-------------------------------------------------------");
                 writer.Close();
-                // Puedes escribir más líneas de texto si es necesario utilizando writer.WriteLine()
+
+                // Actualizar el archivo de ID con el nuevo ID
+                File.AppendAllText(rutaArchivoID, id.ToString() + Environment.NewLine);
+
                 MessageBox.Show("Cita guardada en el txt");
             }
-
-
 
         }
     }
